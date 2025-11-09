@@ -1,0 +1,96 @@
+.camera-card {
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  background: white;
+  overflow: hidden;
+  animation: slideUp 0.5s ease-out;
+}
+
+.camera-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.camera-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  min-height: 400px;
+  object-fit: cover;
+}
+
+.camera-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+}
+
+.camera-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.control-btn {
+  border-radius: 12px;
+  padding: 12px 30px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  min-width: 180px;
+}
+
+.control-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.control-btn:active {
+  transform: translateY(-1px);
+}
+
+.control-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.camera-hint {
+  padding: 10px;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .camera-video {
+    min-height: 300px;
+  }
+
+  .control-btn {
+    min-width: 140px;
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  .camera-controls {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .control-btn {
+    width: 100%;
+  }
+}

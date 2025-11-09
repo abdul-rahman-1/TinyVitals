@@ -1,0 +1,251 @@
+.result-container {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.result-card {
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  background: white;
+  overflow: hidden;
+}
+
+.result-header {
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 20px;
+}
+
+.result-icon {
+  font-size: 4rem;
+  color: #50C878;
+  animation: scaleIn 0.5s ease-out;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.result-title {
+  color: #2c3e50;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.severity-badge {
+  font-size: 1rem;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.result-image-wrapper {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
+.result-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  min-height: 250px;
+}
+
+.analysis-summary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 25px;
+  border-radius: 15px;
+  color: white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.summary-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.summary-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.analysis-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* Report Card */
+.report-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.report-header {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-bottom: 2px solid #e0e0e0;
+  padding: 15px 20px;
+}
+
+.report-header h5 {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.report-body {
+  padding: 25px;
+  background: #fafafa;
+}
+
+.report-item {
+  padding: 12px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.report-item:last-child {
+  border-bottom: none;
+}
+
+.report-key {
+  color: #2c3e50;
+  font-weight: 600;
+  display: inline-block;
+  min-width: 150px;
+}
+
+.report-value {
+  color: #555;
+  word-break: break-word;
+}
+
+.report-text {
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+/* Disclaimer Alert */
+.disclaimer-alert {
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  color: #1565c0;
+}
+
+.disclaimer-alert .alert-heading {
+  color: #0d47a1;
+}
+
+/* Action Buttons */
+.result-actions {
+  padding-top: 20px;
+  border-top: 2px solid #f0f0f0;
+}
+
+.result-actions .action-btn {
+  border-radius: 12px;
+  padding: 12px 30px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  margin: 5px;
+}
+
+.result-actions .action-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Print Styles */
+@media print {
+  .result-actions,
+  .app-header,
+  .app-footer {
+    display: none;
+  }
+
+  .result-card {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+
+  .analysis-summary {
+    background: white !important;
+    color: black !important;
+    border: 2px solid #667eea;
+  }
+
+  .summary-title,
+  .analysis-text {
+    color: black !important;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .result-title {
+    font-size: 1.5rem;
+  }
+
+  .result-icon {
+    font-size: 3rem;
+  }
+
+  .severity-badge {
+    font-size: 0.9rem;
+    padding: 6px 15px;
+  }
+
+  .summary-title {
+    font-size: 1.25rem;
+  }
+
+  .analysis-text {
+    font-size: 1rem;
+  }
+
+  .report-key {
+    display: block;
+    min-width: auto;
+    margin-bottom: 5px;
+  }
+
+  .result-actions .action-btn {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .result-actions {
+    display: flex;
+    flex-direction: column;
+  }
+}
